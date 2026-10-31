@@ -12,7 +12,42 @@ A small Python module that decides whether a student can register for a course, 
 |------|-------------|
 | `course_registration.py` | The module under test |
 | `test_course_registration.py` | Starter test file |
+| `CodeCoverageTest_L6_56_application.py` | Tests for code (line) coverage, 100% |
+| `BranchCoverageTest_L6_56_application.py` | Tests for branch coverage, 100% |
+| `screenshots/` | Terminal screenshots of the coverage reports |
 
-Keep all your Lab 6 work in this `LAB6` folder. Lab 7 will be added to this repo later.
+## How to Run
 
-Refer to the lab handout for instructions.
+Run all commands from the `LAB6` folder.
+
+### 1. Setup
+
+```bash
+cd LAB6
+python3 -m venv .venv
+source .venv/bin/activate
+pip install coverage pytest
+```
+
+### 2. Code coverage
+
+```bash
+coverage run -m pytest CodeCoverageTest_L6_56_application.py
+coverage report -m
+```
+
+### 3. Branch coverage
+
+```bash
+coverage run --branch -m pytest BranchCoverageTest_L6_56_application.py
+coverage report -m
+```
+
+`-m` lists the line numbers that were not covered. Without the venv activated, use `.venv/bin/coverage` instead of `coverage`.
+
+### 4. Run the tests only
+
+```bash
+pytest CodeCoverageTest_L6_56_application.py BranchCoverageTest_L6_56_application.py
+```
+
