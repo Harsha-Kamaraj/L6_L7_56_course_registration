@@ -1,0 +1,22 @@
+SS3 - Fixed application: malformed input is handled
+$ python course_registration_parser.py
+Inputs: cs / 4,,3 / pes1ug24cs666|Harsha K
+==== Running format_course_code ====
+Enter a course code as DEPT NUMBER (e.g. cs 301): Formatted course code: Invalid input
+
+==== Running total_credits ====
+Enter course credits separated by commas (e.g. 4,3,4): Total credits: Invalid input
+
+==== Running parse_student_record ====
+Enter a student record as SRN|name|status (e.g. pes1ug23cs001|Asha|regular): Student record: Invalid input
+
+Fixed application: valid input still works
+Inputs: cs 301 / 4,3,4 / pes1ug24cs666|Harsha K|regular
+==== Running format_course_code ====
+Enter a course code as DEPT NUMBER (e.g. cs 301): Formatted course code: CS301
+
+==== Running total_credits ====
+Enter course credits separated by commas (e.g. 4,3,4): Total credits: 11
+
+==== Running parse_student_record ====
+Enter a student record as SRN|name|status (e.g. pes1ug23cs001|Asha|regular): Student record: {'srn': 'PES1UG24CS666', 'name': 'Harsha K', 'status': 'regular'}

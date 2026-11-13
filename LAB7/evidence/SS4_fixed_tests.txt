@@ -1,0 +1,11 @@
+SS4 - All tests against the fixed module
+$ python -m pytest test_course_registration_parser.py --hypothesis-seed=7
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/harshak/Documents/GitHub/L6_L7_56_course_registration/LAB7
+plugins: hypothesis-6.170.15
+collected 31 items
+
+test_course_registration_parser.py ...............................       [100%]
+
+============================== 31 passed in 0.63s ==============================

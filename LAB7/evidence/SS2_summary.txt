@@ -1,0 +1,17 @@
+SS2 - Completed Hypothesis tests against the original buggy module
+$ python -m pytest test_course_registration_parser.py -k no_crash --tb=short --hypothesis-seed=7
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0
+rootdir: /private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e
+plugins: hypothesis-6.170.15
+collected 31 items / 28 deselected / 3 selected
+
+test_course_registration_parser.py FFF                                   [100%]
+
+=================================== FAILURES ===================================
+=========================== short test summary info ============================
+FAILED test_course_registration_parser.py::test_format_course_code_no_crash
+FAILED test_course_registration_parser.py::test_total_credits_no_crash - Base...
+FAILED test_course_registration_parser.py::test_parse_student_record_no_crash
+======================= 3 failed, 28 deselected in 0.97s =======================
+Full tracebacks: evidence/SS2_buggy_tests.txt

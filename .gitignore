@@ -1,2 +1,5 @@
 __pycache__/
 .venv/
+.pytest_cache/
+.hypothesis/
+LAB7/.report_preview/

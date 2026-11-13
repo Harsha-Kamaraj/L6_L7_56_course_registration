@@ -1,0 +1,213 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0
+rootdir: /private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e
+plugins: hypothesis-6.170.15
+collected 31 items / 28 deselected / 3 selected
+
+test_course_registration_parser.py FFF                                   [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_format_course_code_no_crash _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 13, in test_format_course_code_no_crash
+  |     def test_format_course_code_no_crash(s):
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 15, in test_format_course_code_no_crash
+    |     result = format_course_code(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 6, in format_course_code
+    |     dept, number = code.split()
+    |     ^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 0)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 17, in test_format_course_code_no_crash
+    |     pytest.fail(f"format_course_code crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: format_course_code crashed for '': not enough values to unpack (expected 2, got 0)
+    | Failing test case: test_format_course_code_no_crash(
+    |     s='',
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         /private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py:16
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 15, in test_format_course_code_no_crash
+    |     result = format_course_code(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 6, in format_course_code
+    |     dept, number = code.split()
+    |                    ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 17, in test_format_course_code_no_crash
+    |     pytest.fail(f"format_course_code crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: format_course_code crashed for None: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_format_course_code_no_crash(
+    |     s=None,
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         /private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py:16
+    +------------------------------------
+_________________________ test_total_credits_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 22, in test_total_credits_no_crash
+  |     def test_total_credits_no_crash(s):
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 24, in test_total_credits_no_crash
+    |     result = total_credits(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 14, in total_credits
+    |     return sum(int(credit) for credit in text.split(','))
+    |                                          ~~~~~~~~~~^^^^^
+    | TypeError: a bytes-like object is required, not 'str'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 26, in test_total_credits_no_crash
+    |     pytest.fail(f"total_credits crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: total_credits crashed for b'': a bytes-like object is required, not 'str'
+    | Failing test case: test_total_credits_no_crash(
+    |     s=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 24, in test_total_credits_no_crash
+    |     result = total_credits(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 14, in total_credits
+    |     return sum(int(credit) for credit in text.split(','))
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 14, in <genexpr>
+    |     return sum(int(credit) for credit in text.split(','))
+    |                ~~~^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 26, in test_total_credits_no_crash
+    |     pytest.fail(f"total_credits crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: total_credits crashed for '': invalid literal for int() with base 10: ''
+    | Failing test case: test_total_credits_no_crash(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 24, in test_total_credits_no_crash
+    |     result = total_credits(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 14, in total_credits
+    |     return sum(int(credit) for credit in text.split(','))
+    |                                          ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 26, in test_total_credits_no_crash
+    |     pytest.fail(f"total_credits crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: total_credits crashed for None: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_total_credits_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+______________________ test_parse_student_record_no_crash ______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 31, in test_parse_student_record_no_crash
+  |     def test_parse_student_record_no_crash(s):
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 4 distinct failures. (4 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 33, in test_parse_student_record_no_crash
+    |     result = parse_student_record(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 21, in parse_student_record
+    |     parts = line.split('|')
+    | TypeError: a bytes-like object is required, not 'str'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 35, in test_parse_student_record_no_crash
+    |     pytest.fail(f"parse_student_record crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: parse_student_record crashed for b'': a bytes-like object is required, not 'str'
+    | Failing test case: test_parse_student_record_no_crash(
+    |     s=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 33, in test_parse_student_record_no_crash
+    |     result = parse_student_record(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 24, in parse_student_record
+    |     "status": parts[2].strip().lower()}
+    |               ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 35, in test_parse_student_record_no_crash
+    |     pytest.fail(f"parse_student_record crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: parse_student_record crashed for '|': list index out of range
+    | Failing test case: test_parse_student_record_no_crash(
+    |     s='|',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 33, in test_parse_student_record_no_crash
+    |     result = parse_student_record(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 23, in parse_student_record
+    |     "name": parts[1].strip(),
+    |             ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 35, in test_parse_student_record_no_crash
+    |     pytest.fail(f"parse_student_record crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: parse_student_record crashed for '': list index out of range
+    | Failing test case: test_parse_student_record_no_crash(
+    |     s='',
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 33, in test_parse_student_record_no_crash
+    |     result = parse_student_record(s)
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/course_registration_parser.py", line 21, in parse_student_record
+    |     parts = line.split('|')
+    |             ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "/private/var/folders/pl/v03jl9xs27j9dfyzz4ps39s80000gn/T/lab7-before.mxmJ8e/test_course_registration_parser.py", line 35, in test_parse_student_record_no_crash
+    |     pytest.fail(f"parse_student_record crashed for {s!r}: {error}")
+    |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | Failed: parse_student_record crashed for None: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_student_record_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+=========================== short test summary info ============================
+FAILED test_course_registration_parser.py::test_format_course_code_no_crash
+FAILED test_course_registration_parser.py::test_total_credits_no_crash - Base...
+FAILED test_course_registration_parser.py::test_parse_student_record_no_crash
+======================= 3 failed, 28 deselected in 0.97s =======================

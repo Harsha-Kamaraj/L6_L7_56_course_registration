@@ -1,0 +1,15 @@
+SS1 - Original buggy application (from commit 71e1df4)
+$ python evidence/buggy/course_registration_parser.py
+Input: cs (missing course number; crash expected)
+==== Running format_course_code ====
+Enter a course code as DEPT NUMBER (e.g. cs 301): Traceback (most recent call last):
+  File "/Users/harshak/Documents/GitHub/L6_L7_56_course_registration/LAB7/evidence/buggy/course_registration_parser.py", line 40, in <module>
+    main()
+    ~~~~^^
+  File "/Users/harshak/Documents/GitHub/L6_L7_56_course_registration/LAB7/evidence/buggy/course_registration_parser.py", line 29, in main
+    print("Formatted course code:", format_course_code(value))
+                                    ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/harshak/Documents/GitHub/L6_L7_56_course_registration/LAB7/evidence/buggy/course_registration_parser.py", line 6, in format_course_code
+    dept, number = code.split()
+    ^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
